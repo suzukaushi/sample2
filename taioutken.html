@@ -1,0 +1,139 @@
+<!DOCTYPEhtml>
+<html>
+<head>
+        <meta charset="UTF-8">
+        <title>統計学</title>
+        <style type="text/css">
+            html{
+                background-color: lightgray;
+            }
+            body{
+                margin:auto;
+                padding:20px;
+                width:70%;
+                font-size: large;
+                background-color: white;
+            }
+            .fraction{
+                display:inline-block;
+                vertical-align: middle;
+                text-align: center;
+            }
+            .fraction_n,.fraction_d{
+                display: block;
+            }
+            .fraction_n{
+                border-bottom: 1px solid #333;
+            }
+            c{
+                text-decoration: overline;
+            }
+        </style>
+</head>
+
+    <body>
+       <h1>
+            対応のあるt検定とは
+        </h1>
+        <p>
+            これは、パラメトリック検定の一つである。得られたデータの各観測地がペアとして対応している対標本における
+            各観測地の差の検定である。スチューデントのt検定やウェルチのt検定とは別物である。
+        </p>
+        <p>
+            データ間の対応とは、以下のようなものとなる。ある学年のあるクラスで実施した数学のテスト結果をデータAとする。
+            そのクラスに対し数学のドリルによる計算練習を一定期間与えた後に再度、同程度のレベルの数学のテストを受けさせ、
+            得られたテスト結果をデータBとする。このデータAとデータBには<strong>対応がある</strong>。
+            一方で、ある学年の別のクラスで実施した数学のテスト結果をデータCとする。このデータCとデータAには
+            <strong>対応がない</strong>。2つのデータがペアとして対応している対標本から得られた場合を対応があるといい、
+            別々の標本から得られた場合を対応がないという。
+        </p>
+        <p>
+            それでは、例題をみてみます。<br>
+            血圧を下げる薬のテストを行います。被験者5人に対して薬の投与前と投与後の血圧を測定したところ、次の表のような
+            結果が得られました。この結果から、薬の投与によって血圧は下がったといえるでしょうか。
+        </p>
+        <table border="1">
+            <tr><th>被験者No.</th><th>投与前の血圧</th><th>投与後の血圧</th></tr>
+            <tr><td>1</td><td>180</td><td>150</td></tr>
+            <tr><td>2</td><td>130</td><td>135</td></tr>
+            <tr><td>3</td><td>165</td><td>145</td></tr>
+            <tr><td>4</td><td>155</td><td>150</td></tr>
+            <tr><td>5</td><td>140</td><td>140</td></tr>
+        </table>
+        <p>
+            対応がある場合の2標本のt検定では2群の差が0かどうかについての検定を行う。この例題では、投与前後での血圧の差が
+            0かどうかを検定します。したがって、まず薬の投与前後での血圧の差とその平均値を算出します。
+        </p>
+        <table border="1">
+            <tr><th>被験者No.</th><th>投与前の血圧</th><th>投与後の血圧</th><th>差（投与前-投与後）</th></tr>
+            <tr><td>1</td><td>180</td><td>150</td><td>30</td></tr>
+            <tr><td>2</td><td>130</td><td>135</td><td>-5</td></tr>
+            <tr><td>3</td><td>165</td><td>145</td><td>20</td></tr>
+            <tr><td>4</td><td>155</td><td>150</td><td>5</td></tr>
+            <tr><td>5</td><td>140</td><td>140</td><td>0</td></tr>
+            <tr><td>平均</td><td>154</td><td>144</td><td>10</td></tr>
+        </table>
+        <h3>
+            1. 仮説を立てる
+        </h3>
+        <p>
+            帰無仮説H<sub>0</sub>は「投与前後の血圧は等しい=投薬によって血圧は下がらなかった」とします。したがって、
+            対立仮設H<sub>1</sub>は「投薬によって血圧に差があった=投薬によって血圧は下がった」となります。
+        </p>
+        <h3>
+            2. 有意水準を設定する
+        </h3>
+        <p>
+            α=0.05とします。
+        </p>
+        <h3>
+            3. 適切な検定統計量を決める
+        </h3>
+        <p>
+            この実験では母分散がわからないので、普遍分散s<sup>2</sup>を用いるt統計量を使います。統計量tは次の式から
+            求められます。<span>d</span>は投薬による血圧の差の平均、μは差の母平均、nはサンプルサイズを表します。<br>
+            <big>t=<span class="fraction">
+                <span class="fraction_n"><c>d</c>-μ</span>
+                <span class="fraction_d">√(s<sup>2</sup>÷n)</span>
+            </span>
+            =<span class="fraction">
+                <span class="fraction_n">(<c>d</c>-μ)</span>
+                <span class="fraction_d">(s÷√n)</span>
+            </span>
+            </big>
+        </p>
+        <h3>
+            4. 棄却ルールを決める
+        </h3>
+        <p>
+            この検定で使用する分布は自由度「5-1=4」の「t分布」です。この例題では血圧が下がったかどうかのみを考えれば
+            よいので、片側検定を行います。統計数値表からt<sub>4</sub>(0.05)を値を読み取ると「2.132」となっている。
+        </p>
+        <h3>
+            5. 検定統計量を元に結論を出す
+        </h3>
+        <p>
+            投薬前後での血圧の差が0かどうかを検定するため、μ=0となります。また、投薬前後での血圧の差の普遍分散s<sup>2</sup>
+            は次のように計算します。<br>
+            <big>s<sup>2</sup>=1÷(5-1)×{(30-10)<sup>2</sup>+(-5-10)<sup>2</sup>+(20-10)<sup>2</sup>+(5-10)<sup>2</sup>+(0-10)<sup>2</sup>}</big><br>
+            <big>s<sup>2</sup>=212.5</big>
+        </p>
+        <p>
+            この値を統計量tの式に代入すると次のようになる。<br>
+            <big>t=<span class="fraction">
+                <span class="fraction_n">(10-0)</span>
+                <span class="fraction_d">√(212.5÷5)</span>
+            </span>
+            ≒1.53</big>
+        </p>
+        <p>
+            次の図は自由度4のt分布を表したものです。t=1.53は図の矢印の部分に該当します。矢印は棄却域に入っていない
+            ことから、「有意水準5%において、帰無仮説は棄却されない」という結果になります。つまり、「投薬によって
+            血圧が下がったとは言えない」と結論付けられます。
+        </p>
+        <img src="taiou2.png" width="550">
+        <p></p>
+        <a href="1.html">トップページへ</a>
+    </body>
+
+</html>
