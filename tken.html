@@ -1,0 +1,88 @@
+<!DOCTYPEhtml>
+<html>
+<head>
+        <meta charset="UTF-8">
+        <title>統計学</title>
+        <style type="text/css">
+            html{
+                background-color: lightgray;
+            }
+            body{
+                margin:auto;
+                padding:20px;
+                width:70%;
+                font-size: large;
+                background-color: white;
+            }
+            .iti p{
+                color:red;
+            }
+            span{
+                text-decoration: overline;
+            }
+        </style>
+</head>
+
+    <body>
+       <h1>t検定</h1>
+       <h2><div class="long">t検定とは</div></h2>
+       <p>
+           t検定は2つのグループの平均の差が偶然誤差の範囲内にあるかどうか調べるものである。
+       </p>
+       <h4>
+           (1) データに対応があるときのt検定
+        </h4>
+       <p>
+           「それぞれの被験者が2つのテストA，Bを受けた時の平均点の比較」のようにグループAのデータとグループB
+           のデータに同一被験者のデータという対応があるとき、これら2つのテストの平均点の差に有意さがあるか
+           どうかは「対応があるときのt検定」を用いる。<br>
+           データに対応があるときは、単にデータの個数が等しいだけでなく、対応するデータ間の差を求めることができる
+           ので、それらの差の平均と分散から有意差を判断できる。
+       </p>
+       <h4>
+           (2) データに対応がないときのt検定
+       </h4>
+       <p>
+           データに対応がないときは、「データの個数が等しいとき」も「等しくないとみなせないとき」もある。
+           これらの場合は、各グループの平均と分散だけからt検定を行うことになり、さらに分散がほぼ等しいと
+           みなせる場合と分散が等しいとはみなせない場合に応じて、各々「分散が等しいときのt検定」
+           「分散が等しくない時のt検定」を適用する。<br>
+           分散が等しいかどうかの判断は<strong>F検定</strong>によって行う。
+       </p>
+       <h4>
+           t検定の流れ
+       </h4>
+       <table border="1">
+        <tr><td>対応があるとき</td><td colspan="3">（等分散であるか否かを調べる必要はない）<br>
+            <a href="taioutken.html"><strong>対応がある場合のt検定</strong></a></td></tr>
+        <tr><td rowspan="2">対応がないとき</td><td rowspan="2"><strong>F検定を行う</strong></td><td>分散が等しい（と見なせる）とき</td>
+            <td><a href="stundet.html"><strong>分散が等しいときのt検定</strong></a><br>
+                （Studentのt検定）</td></tr>
+        <tr><td>分散が等しくない（と見なせる）とき</td><td><a href="Welch.html"><strong>分散が異なるときのt検定</strong></a><br>
+                （Welchのt検定）</td></tr>
+        </table>
+        <h2>ここに上の3つのパターンのt検定をかく</h2>
+        <p>
+            ※t分布において「外側5%の範囲にあれば同一母集団からの標本ではなく、有意差があると考える」。<br>
+            95%信頼区間の外側区間の外側に来る確率をpとするとき
+        </p>
+        <table border="1">
+            <tr><td>pの値</td><th>有意差についての用語</th></tr>
+            <tr><td>p ＞ 0.1</td><td>有意でない<br>
+            <strong>有意差はない</strong></td></tr>
+            <tr><td>0.05　＜　p ＜ 0.10</td><td>有意傾向である</td></tr>
+            <tr><td>p　＜　0.05</td><td>有意である<br>
+                <strong>有意差がある</strong></td></tr>
+            <tr><td>p　＜　0.01</td><td>ほとんどの場合有意水準5%で判断すればよい<br>
+                （特別な事情があるとき有意水準として［外側に来る確率］1%を用いることもある。
+                 この場合、<strong>有意水準1%で有意差がある</strong>とすればよい。）</td></tr>
+        </table>
+        <p>
+            ※F分布において「確率が上側5%の範囲にあれば分散が等しくないと考える」。
+        </p>
+        <h3>あいうえおう</h3>
+
+       <a href="1.html">トップページへ</a>
+    </body>
+
+</html>
