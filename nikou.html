@@ -1,0 +1,101 @@
+<!DOCTYPEhtml>
+<html>
+<head>
+        <meta charset="UTF-8">
+        <title>統計学</title>
+        <style type="text/css">
+            html{
+                background-color: lightgray;
+            }
+            body{
+                margin:auto;
+                padding:20px;
+                width:70%;
+                font-size: large;
+                background-color: white;
+            }
+            .iti p{
+                color:red;
+            }
+            th,td{
+                text-align: center;
+            }
+        </style>
+ </head>
+
+    <body>
+       <h1>二項分布</h1>
+       <h2><div class="long">二項分布とは</div></h2>
+       <p>一般にある事象の出現率（有効率、死亡率など）がpである母集団（無限母集団を想定）からn個の標本を
+           無作為に抽出したとき、その事象が出現する個数（確率変数）をXとしたとき、γ個出現する確率は、
+           <strong>二項分布</strong>
+       </p>
+       <center>
+       <h3>Pr{X=γ}=B(γ|n,p)=<sub>n</sub>C<sub>γ</sub>p<sup>γ</sup>(1-p)<sup>n-γ</sup></h3>
+       </center>
+       <p>で与えられる。</p>
+       <p>例えば、コインを10回投げて表が3回出る確率は、表が出る確率がp=0.5であることから、
+           次のように計算できる。
+       </p>
+       <center>
+       <h3>Pr{X=3}=<sub>10</sub>C<sub>3</sub>×0.5³×(1-0.5)<sup>10-3</sup>=0.117</h3>
+       </center>
+       <p>コインの表が出る確率が0.5とするならば、裏が出る確率は1-0.5=0.5になる。</p>
+       <p>同様の計算を行い、コインを10回投げて表の出る回数を表にまとめる。</p>
+       <center>
+       <table border="3" width="200">
+           <tr>
+               <th>表の出た回数</th><th>確率</th>
+            </tr>
+           <tr>
+               <td>0</td><td>0.001</td>
+            </tr>
+            <tr>
+                <td>1</td><td>0.010</td>
+            </tr>
+            <tr>
+                <td>2</td><td>0.044</td>
+            </tr>
+            <tr>
+                <td>3</td><td>0.117</td>
+            </tr>
+            <tr>
+                <td>4</td><td>0.205</td>
+            </tr>
+            <tr>
+                <td>5</td><td>0.246</td>
+            </tr>
+            <tr>
+                <td>6</td><td>0.205</td>
+            </tr>
+            <tr>
+                <td>7</td><td>0.117</td>
+            </tr>
+            <tr>
+                <td>8</td><td>0.044</td>
+            </tr>
+            <tr>
+                <td>9</td><td>0.010</td>
+            </tr>
+            <tr>
+                <td>10</td><td>0.001</td>
+            </tr>
+       </table>
+       </center>
+       <p>この表から、二項分布のグラフ描くと次のようになる。表の出る回数が5回となる時の確率が最も高く、
+           表の出る回数が5回より多い、もしくは少なくなるにつれて、確率は低くなっている。
+       </p>
+       <center>
+       <img src="nikou1.png" width="50%">
+       </center>
+       <p>他にもさまざまな二項分布のグラフの形を見てみる。今あげた例は、コインを10回投げて表が出る回数の
+           確率を表したものだったが、コインを投げる回数（＝試行回数）を20,50,100と増やした場合、コインの
+           表が出る回数の確率のグラフは次のようになる。横軸は成功回数γ、縦軸はその時の確率pを表す。
+       </p>
+       <center>
+           <img src="nikou2.png" width="50%">
+       </center>
+       <a href="1.html">トップページへ</a>
+    </body>
+
+</html>
