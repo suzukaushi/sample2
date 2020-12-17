@@ -1,0 +1,160 @@
+<!DOCTYPEhtml>
+<html>
+<head>
+        <meta charset="UTF-8">
+        <title>統計学</title>
+        <style type="text/css">
+            html{
+                background-color: lightgray;
+            }
+            body{
+                margin:auto;
+                padding:20px;
+                width:70%;
+                font-size: large;
+                background-color: white;
+            }
+            .iti p{
+                color:red;
+            }
+            .fraction{
+                display:inline-block;
+                vertical-align: middle;
+                text-align: center;
+            }
+            .fraction_n,.fraction_d{
+                display: block;
+            }
+            .fraction_n{
+                border-bottom: 1px solid #333;
+            }
+            c{
+                text-decoration: overline;
+            }
+        </style>
+</head>
+
+    <body>
+       <h1>正規分布</h1>
+       <h2><div class="long">正規分布とは</div></h2>
+       <p><strong>正規分布のグラフ</strong></p>
+       <img src="seiki1.png" alt="正規分布1">
+       <img src="seiki2.jpg" alt="正規分布2"> 
+       <p>上のような2つのグラフのことを正規分布という。確率分布の一種で、平均値を中心として対称で、
+           つり鐘型をしている。母集団が正規分布をすれば、そこから抽出された無作為標本も正規分布に
+           似た形をするはずである。これを、<strong>データの正規性</strong>という。
+       </p>
+       <p>μ:母平均</p>
+       <p>σ²:母分散</p>
+       <p>σ:母標準偏差</p>
+       <p>このページでは、母平均μ、母分散σ²の正規分布をN(μ,σ²)という記号で表す。<br>
+        母集団が正規分布に従うことが分かれば、いろいろと便利なことが多い。例えば以下のことがあげられる。
+        </p>
+       <p>1)正規分布N(μ,σ²)はμとσ²（またはσ）で一意に決定される</p>
+       <p>2)μは標本平均<c>X</c>、σ²は標本分散S²で推定できる</p>
+       <p>3)したがって、正規母集団からの標本の持つ情報は<c>X</c>とS²に縮約される（十分統計量）</p> 
+       <div class="iti">4)その分布形が母平均μに関して左右対称であるため、データ数nが十分に大きければ（n≧100くらい）
+       <p>ⅰ)「平均値±標準偏差の範囲に全体の68.26%が含まれる」</p>
+       <p>ⅱ)「平均値±標準偏差×2の範囲に全体の95.44%が含まれる」</p>
+       <p>ⅲ)「平均値±標準偏差×3の範囲に全体の99.74%が含まれる」</p>
+       </div>
+       <h3>
+           実際に正規分布に関する問題を解いてみよう
+       </h3>
+       <h4>
+           例題1.1
+       </h4>
+       <p>
+            下記の標準正規分布の青い部分の確率を求めましょう。※下記の表が必要なら使ってください。
+       </p>
+       <img src="seiki2.png" width="550">
+       <img src="seiki3.png" width="550">
+       <h4>
+           解答
+       </h4>
+       <img src="seiki4.png" width="550">
+       <img src="seiki5.png" width="550">
+       <p>
+           上の画像から青い部分からオレンジ部分の確率を引いたら求めたい確率がでてくることがわかると
+           思います。それでは、1枚目の画像の確率から見てみましょう。<br>
+           基準値Zが0.00の部分なので、上記の表を見てみます。すると、0.50000だとわかります。では、2枚目
+           の画像の確率はというと、基準値Zが1.00の部分なので、0.15866だとわかります。この2つの確率
+           から、求めたい確率は次の式です。<br>
+           0.50000-0.15866=0.34134
+       </p>
+       <h4>
+           例題1.2
+       </h4>
+       <p>
+           92,987人が受験した第225回（2017年11月実施）TOEIC（990点満点）の成績が、平均577点、標準偏差172.4点であった。<br>
+           得点が正規分布に近い分布をしていると仮定して、以下の問いに答えよ。
+       </p>
+       <p>
+           ア）800点以上の受験者は何人くらいいると考えられるか？
+       </p>
+       <p>
+           イ）上位1000番目以内に入るためには何点以上あればよいか？
+       </p>
+       <h4>
+           解答
+       </h4>
+       <p>
+           n=92987<sub>（人）</sub>,<c>X</c>=577<sub>（点）</sub>,S=172.4<sub>（点）</sub>
+       </p>
+       <p>
+           ア）
+       </p>
+       <p>
+           上のことから、800点は次のように表すことができる。<br>
+           800点→基準値Z<sub>800</sub><br>
+           Z<sub>800</sub>=
+           <span class="fraction">
+            <span class="fraction_n">800-<c>X</c></span>
+            <span class="fraction_d">S</span>
+            </span><br>
+            Z<sub>800</sub>=
+            <span class="fraction">
+            <span class="fraction_n">800-577</span>
+            <span class="fraction_d">172.4</span>
+            </span><br>
+            Z<sub>800</sub>≒1.29
+       </p>
+       <p>
+           正規分布N(0,1)の上側確率:Z→αの表を見てみると<br>
+           α=0.098525<br>
+           これを、人数に換算した場合<br>
+           92,987×0.098525=9161.5<sub>人</sub>より、9162人くらいいると考えられる。
+       </p>
+       <p>
+           イ）
+       </p>
+       <p>
+           上位1000番目以内に入るために、まず1000人目の点を求めてみる。<br>
+           α=
+           <span class="fraction">
+           <span class="fraction_n">1000</span>
+           <span class="fraction_d">92987</span>
+           </span><br>
+           α=0.0107541<br>
+           α≒0.011
+       </p>
+       <p>
+           正規分布N(0,1)の上側100αパーセント点Z(α):α→Z(α)の表を見てみると<br>
+           Z(0.011)=2.29037より<br>
+           Z(0.011)=
+           <span class="fraction">
+            <span class="fraction_n">X-<c>X</c></span>
+            <span class="fraction_d">S</span>
+            </span><br>
+            2.29037=
+            <span class="fraction">
+            <span class="fraction_n">X-577</span>
+            <span class="fraction_d">172.4</span>
+            </span><br>
+            X=971.86<br>
+           971点では1000番目以内に確実に入れていないので、972点以上必要である。
+       </p>
+       <a href="1.html">トップページへ</a>
+    </body>
+
+</html>
