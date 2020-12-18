@@ -1,0 +1,105 @@
+<!DOCTYPEhtml>
+<html>
+<head>
+        <meta charset="UTF-8">
+        <title>統計学</title>
+        <style type="text/css">
+            html{
+                background-color: lightgray;
+            }
+            body{
+                margin:auto;
+                padding:20px;
+                width:70%;
+                font-size: large;
+                background-color: white;
+            }
+            .fraction{
+                display:inline-block;
+                vertical-align: middle;
+                text-align: center;
+            }
+            .fraction_n,.fraction_d{
+                display: block;
+            }
+            .fraction_n{
+                border-bottom: 1px solid #333;
+            }
+            c{
+                text-decoration: overline;
+            }
+        </style>
+</head>
+
+    <body>
+       <h1>Welchのt検定とは</h1>
+        <p>
+            ウェルチのt検定とは、<a href="student.html">スチューデントのt検定</a>と同じく、2つのデータ間の平均値の差に関する
+            パラメトリック検定である。スチューデントのt検定が2つのデータの母分散が等しいと仮定できるときに用いる方法である
+            のに対し、<strong>ウェルチのt検定は2つのデータの母分散が等しいとは限らないときに用いる</strong>検定法である。検定法の
+            名前に冠されているウェルチとは、本検定法の開発者である20世紀のイギリス統計学者Bernard Lewis Welchに由来する。<br>
+            <strong>帰無仮説：</strong><br>
+            2つの集団の母平均はμ₁、μ₂は同じである<br>
+            <strong>対立仮説：</strong><br>
+            2つの集団の母平均μ₁、μ₂は異なる<br>
+            (μ₁＞μ₂、μ₁＜μ₂を対立仮説にすることもある)
+        </p>
+        <h3>
+            前提
+        </h3>
+        <p>
+            <strong>必要な前提：</strong><br>
+            2つの母集団は、それぞれ正規分布に従っている必要がある<br>
+            <strong>必要でない前提：</strong><br>
+            ウェルチのt検定には、<br>
+            ・2つの母集団からのサンプルサイズが等しくない場合でも使える<br>
+            ・2つの母集団の分散（母分散）が等しくない場合でも使える<br>
+            というメリットがある。
+        </p>
+        <h3>
+            具体的な検定の手順
+        </h3>
+        <h4>
+            1. 統計量の計算
+        </h4>
+        <p>
+            使う統計量は<br>
+            <strong>
+                t=
+                <span class="fraction">
+                    <span class="fraction_n"><c>X₁</c>-<c>X₂</c></span>
+                    <span class="fraction_d">√(S₁²/n₁+S₂²/n₂)</span>
+                    </span>
+            </strong><br>
+            です。ただし、<br>
+            ・<c>X₁</c>，<c>X₂</c>は、それぞれ群のサンプル平均である。<br>
+            ・n₁，n₂は、それぞれの群のサンプル数である。<br>
+            ・S₁²，S₂²は、それぞれの群の不偏標本分散である。
+        </p>
+        <h4>
+            2. 棄却域の計算
+        </h4>
+        <p>
+            使う分布は自由度dのt分布である。ただし、<br>
+            <strong>
+                <span class="fraction">
+                    <span class="fraction_n">(S₁²/n₁+S₂²/n₂)²</span>
+                    <span class="fraction_d">{S₁⁴/n₁²(n₁-1)}+{S₂⁴/n₂²(n₂-1)}</span>
+                    </span>
+            </strong><br>
+            である。例えば、有意水準90%で両側検定を行う場合、自由度n-1のt分布の上側5%点をxとすると、
+            棄却域は|t|≧xとなる。
+        </p>
+        <h3>
+            得られる結果
+        </h3>
+        <p>
+            <strong>帰無仮説が棄却されない場合（t値が0に近い場合）</strong><br>
+            →2群の平均値が異なるとは言えない
+            <strong>帰無仮説が棄却された場合（t値が0から遠い場合）</strong><br>
+            →2群の平均値が異なると予想できる。
+        </p>
+       <a href="1.html">トップページへ</a>
+    </body>
+
+</html>
