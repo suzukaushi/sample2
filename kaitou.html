@@ -1,0 +1,241 @@
+<html>
+<head>
+        <meta charset="UTF-8">
+        <title>統計学</title>
+        <style type="text/css">
+            html{
+                background-color: lightgray;
+            }
+            body{
+                margin:auto;
+                padding:20px;
+                width:70%;
+                font-size: large;
+                background-color: white;
+            }
+            .fraction{
+                display:inline-block;
+                vertical-align: middle;
+                text-align: center;
+            }
+            .fraction_n,.fraction_d{
+                display: block;
+            }
+            .fraction_n{
+                border-bottom: 1px solid #333;
+            }
+            c{
+                text-decoration: overline;
+            }
+            td{
+                text-align: center;
+            }
+            th{
+                border-bottom: 1px solid;
+            }
+        </style>
+</head>
+
+    <body>
+       <h1>解答</h1>
+       <h3>
+           問題1（代表値・散布度）
+       </h3>
+       <p>
+           1）平均値<br>
+           <c>X</c>=(10+8+12+11+12+13+6+12)÷8<br>
+           　=10.5<sub>（日）</sub>
+       </p>
+       <p>
+           2）中央値<br>
+           小さい順に並び替えた場合、小さいほうから4番目が11、5番目が12より<br>
+           (11+12)÷2=11.5<sub>（日）</sub>
+       </p>
+       <p>
+           3）最頻値<br>
+           12が3個で一番多いため、12<sub>（日）</sub>
+       </p>
+       <p>
+           4）分散<br>
+           <table>
+               <tr><th>X<sub>i</sub></th><th>X<sub>i</sub>-<c>X</c></th><th>(X<sub>i</sub>-<c>X</c>²)</th></tr>
+               <tr><td>6</td><td>-4.5</td><td>20.25</td></tr>
+               <tr><td>8</td><td>-2.5</td><td>6.25</td></tr>
+               <tr><td>10</td><td>-0.5</td><td>0.25</td></tr>
+               <tr><td>11</td><td>0.5</td><td>0.25</td></tr>
+               <tr><td>12</td><td>1.5</td><td>2.25</td></tr>
+               <tr><td>12</td><td>1.5</td><td>2.25</td></tr>
+               <tr><td>12</td><td>1.5</td><td>2.25</td></tr>
+               <tr><td>13</td><td>2.5</td><td>6.25</td></tr>
+           </table>
+           (X<sub>i</sub>-<c>X</c>²)の合計は40である。<br>
+           S²=
+           <span class="fraction">
+            <span class="fraction_n">1</span>
+            <span class="fraction_d">n-1</span>
+            </span>・40<br>
+            　=
+            <span class="fraction">
+            <span class="fraction_n">1</span>
+            <span class="fraction_d">8-1</span>
+            </span>・40<br>
+            　≒5.71<sub>（日）</sub>
+       </p>
+       <p>
+           5）標準偏差<br>
+           S=√S²<br>
+           　=√5.71<br>
+           　≒2.39<sub>（日）</sub>
+       </p>
+       <h3>
+           問題2（正規分布）
+       </h3>
+       <p>
+           1）表からZ=|-0.5|=0.30854<br>
+        　　　　 Z=0.8=0.21186<br>
+            全体が1より、<br>
+            1-(0.30854+0.21186)=0.4796
+       </p>
+       <p>
+           2）
+           ア）n=68721，<c>X</c>=597.5，S=174.6<br>
+           Z<sub>800</sub>=
+           <span class="fraction">
+            <span class="fraction_n">800<c>X</c></span>
+            <span class="fraction_d">S</span>
+            </span><br>
+            　=
+            <span class="fraction">
+                <span class="fraction_n">800-597.5</span>
+                <span class="fraction_d">174.6</span>
+                </span><br>
+                　≒1.16<br>
+                表から、α=0.12302より<br>
+                68,721×0.12302≒8454<sub>（人）</sub>
+       </p>
+       <p>
+           イ）<br>
+           α=
+           <span class="fraction">
+            <span class="fraction_n">1000</span>
+            <span class="fraction_d">68,721</span>
+            </span><br>
+            　≒0.015<br>
+            表から、Z=2.17009より<br>
+            Z=
+            <span class="fraction">
+                <span class="fraction_n">X-<c>X</c></span>
+                <span class="fraction_d">S</span>
+                </span>の式より<br>
+                2.17009=
+                <span class="fraction">
+                    <span class="fraction_n">X-597.5</span>
+                    <span class="fraction_d">174.6</span>
+                    </span>したがって<br>
+                    X≒976.39<br>
+                    976点では確実に1000番目以内に入っていないので、977点必要である。
+       </p>
+       <h3>
+           問題3（χ²分布、t分布、F分布）
+       </h3>
+       <p>
+           表より、χ₃²(α)=7.81<br>
+           表より、t₁₁(α)=2.201<br>
+           表より、F₈,₁₆(α)=2.591
+       </p>
+       <h3>
+           問題4（対応のあるt検定）
+       </h3>
+       <p>
+           n=48<sub>（人）</sub>，<c>X</c>=0.85<sub>(kg)</sub>，S=2.12<sub>(kg)</sub>，α=0.05から<br>
+           T=
+           <span class="fraction">
+            <span class="fraction_n"><c>X</c></span>
+            <span class="fraction_d">S÷√n</span>
+            </span><br>
+            　=
+            <span class="fraction">
+                <span class="fraction_n">0.85</span>
+                <span class="fraction_d">2.12÷√48</span>
+                </span><br>
+            　=2.78<br>
+            両側検定より、<br>
+            t<sub>n-1</sub>(
+                <span class="fraction">
+                    <span class="fraction_n">α</span>
+                    <span class="fraction_d">2</span>
+                    </span>)=t<sub>48-1</sub>(
+                        <span class="fraction">
+                            <span class="fraction_n">0.05</span>
+                            <span class="fraction_d">2</span>
+                            </span>)<br>
+                            　=2.012<br>
+            2.012 ＜ T(=2.78)より有意差あり（有意水準5%）
+       </p>
+       <h3>
+           問題5（χ²検定）
+       </h3>
+       <p>
+           「データと期待度数との差を求める」部分まで、まとめてやると以下のとおりである。
+       </p>
+       <table border="1" width="350">
+           <tr><td></td><td>効果あり</td><td>効果なし</td><td>合計</td></tr>
+           <tr><td>新薬投与</td><td>E<sub>a</sub></td><td>E<sub>b</sub></td><td>120</td></tr>
+           <tr><td>偽薬投与</td><td>E<sub>c</sub></td><td>E<sub>d</sub></td><td>80</td></tr>
+           <tr><td>合計</td><td>105</td><td>95</td><td>200</td></tr>
+       </table>
+       <p>
+           N=200<br>
+           E<sub>a</sub>=
+           <span class="fraction">
+            <span class="fraction_n">105・120</span>
+            <span class="fraction_d">200</span>
+            </span>=63，
+            E<sub>b</sub>=
+            <span class="fraction">
+             <span class="fraction_n">95・120</span>
+             <span class="fraction_d">200</span>
+             </span>=57，
+            E<sub>c</sub>=
+             <span class="fraction">
+              <span class="fraction_n">105・80</span>
+              <span class="fraction_d">200</span>
+              </span>=42，
+            E<sub>d</sub>=
+            　<span class="fraction">
+               <span class="fraction_n">95・80</span>
+               <span class="fraction_d">200</span>
+               </span>=38<br>
+            T=
+            <span class="fraction">
+             <span class="fraction_n">(70-63)²</span>
+             <span class="fraction_d">63</span>
+             </span>+
+             <span class="fraction">
+              <span class="fraction_n">(50-57)²</span>
+              <span class="fraction_d">57</span>
+              </span>+
+              <span class="fraction">
+               <span class="fraction_n">(35-42)</span>
+               <span class="fraction_d">42</span>
+               </span>+
+               <span class="fraction">
+                <span class="fraction_n">(45-38)²</span>
+                <span class="fraction_d">38</span>
+                </span><br>
+                　=4.09
+        </p>
+        <p>
+            次に有意水準1%で判断します。<br>
+            表より、χ₁²(0.01)=6.63 ＞ T(=4.09)<br>
+            以上のことから、新薬に効果があるとは言えない（有意水準1%）。
+        </p>
+
+        <p>
+            <a href="rensyu.html">練習問題</a>
+            へ戻る
+        </p>
+       <a href="1.html">トップページへ</a>
+    </body>
+
+</html>
