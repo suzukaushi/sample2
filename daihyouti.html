@@ -1,0 +1,89 @@
+<!DOCTYPEhtml>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>統計学</title>
+        <style type="text/css">
+            html{
+                background-color: lightgray;
+            }
+            body{
+                margin:auto;
+                padding:20px;
+                width:70%;
+                font-size: large;
+                background-color: white;
+            }
+            .fraction{
+                display:inline-block;
+                vertical-align: middle;
+                text-align: center;
+            }
+            .fraction_n,.fraction_d{
+                display: block;
+            }
+            .fraction_n{
+                border-bottom: 1px solid #333;
+            }
+            c{
+                text-decoration: overline;
+            }
+            td{
+                text-align: center;
+            }
+            th{
+                border-bottom: 1px solid;
+            }
+        </style>
+    </head>
+
+    <body>
+        <h1>データの代表値</h1>
+        <h3>10，10，11，10，7，19，10（単位：日）</h3>
+        <h3>平均値</h3>
+        <p>
+            <c>X</c>=(10+10+11+10+7+19+10)÷7<br>
+            　=11<sub>（日）</sub>
+        </p>
+        <h3>中央値</h3>
+        <p>
+            全体の数が7個のため、中央値は小さい（大きい）方から数えて4つめになる。<br>
+            よって中央値は10<sub>（日）</sub>
+        </p>
+        <h3>最頻値</h3>
+        <p>
+            10が4個で一番多いため、10<sub>（日）</sub>
+        </p>
+        <h3>分散</h3>
+        <table>
+            <tr><th>X<sub>i</sub></th><th>X<sub>i</sub>-<c>X</c></th><th>(X<sub>i</sub>-<c>X</c>²)</th></tr>
+            <tr><td>7</td><td>-4</td><td>16</td></tr>
+            <tr><td>10</td><td>-1</td><td>1</td></tr>
+            <tr><td>10</td><td>-1</td><td>1</td></tr>
+            <tr><td>10</td><td>-1</td><td>1</td></tr>
+            <tr><td>10</td><td>-1</td><td>1</td></tr>
+            <tr><td>11</td><td>0</td><td>0</td></tr>
+            <tr><td>19</td><td>8</td><td>64</td></tr>
+        </table>
+        (X<sub>i</sub>-<c>X</c>²)の合計は84である。<br>
+        S²=
+        <span class="fraction">
+         <span class="fraction_n">1</span>
+         <span class="fraction_d">n-1</span>
+         </span>・84<br>
+         　=
+         <span class="fraction">
+         <span class="fraction_n">1</span>
+         <span class="fraction_d">7-1</span>
+         </span>・84<br>
+         　=14<sub>（日）</sub>
+        <h3>標準偏差</h3>
+        <p>
+            S=√S²<br>
+           　=√14<br>
+           　≒3.74<sub>（日）</sub>
+        </p>
+       <a href="1.html">トップページへ</a>
+    </body>
+
+</html>
